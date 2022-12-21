@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function FormToDo({
     actividad,
     setActividad,
@@ -17,7 +18,28 @@ export default function FormToDo({
         }])
         setActividad(e.target.value)
         setDescripcion(e.target.value)
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Se a agregado un actividad correctamente'
+          })
+    
+      
     }
+
+    
 
     return (
         <div >

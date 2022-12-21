@@ -15,9 +15,7 @@ export default function EjericioTodo() {
 
       <div className="row">
         <div className="col-xl">
-          <br />
-          <br />
-          <br />
+          
           <FormToDo
             actividad={actividad}
             setActividad={setActividad}
